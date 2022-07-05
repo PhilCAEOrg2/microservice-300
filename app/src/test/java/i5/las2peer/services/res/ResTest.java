@@ -116,6 +116,33 @@ public class ResTest {
   }
 
 
+  /**
+   * 
+   * Test for the UnauthorizedtestforGETtest_ID83876 method.
+   * 
+   */
+  @Test
+  public void testUnauthorizedtestforGETtest_ID83876() {
+    MiniClientCoverage c = new MiniClientCoverage(mainPath);
+    c.setConnectorEndpoint(connector.getHttpEndpoint());
+    
+        
+    try {
+      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      ClientResponse result = c.sendRequest("GET", "/test", """
+""", "text/plain", "*/*", new HashMap<>(), new Object[0]);
+      System.out.println("Result of request with id: 641023: " + result.getResponse().trim());
+    
+      Assert.assertEquals("[310312]", 401, result.getHttpCode());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+
+    
+  }
 
 
 

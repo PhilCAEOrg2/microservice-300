@@ -155,7 +155,7 @@ public class ResTest {
     
         
     try {
-      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      c.setLogin(testAgentAdam.getIdentifier(), testPassAdam);
       ClientResponse result = c.sendRequest("GET", "/test", """
 """, "text/plain", "*/*", new HashMap<>(), new Object[0]);
       System.out.println("Result of request with id: 312873: " + result.getResponse().trim());

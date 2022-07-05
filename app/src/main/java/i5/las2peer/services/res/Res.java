@@ -37,6 +37,7 @@ import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature;
 
 import java.util.HashMap;
 import java.util.Map;
+import i5.las2peer.api.security.AnonymousAgent;
  
 
 /**

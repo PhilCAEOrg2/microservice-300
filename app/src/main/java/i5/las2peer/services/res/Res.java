@@ -158,14 +158,17 @@ public class Res extends RESTService {
 
      
     // service method invocations
-
+Agent agent = Context.getCurrent().getMainAgent();
+		if (agent instanceof AnonymousAgent) {
+			return Response.status(HttpURLConnection.HTTP_UNAUTHORIZED).entity("User not authorized.").build();
+		}
      
 
 
 
 
     // unauth
-    boolean unauth_condition = true;
+    boolean unauth_condition = false;
     if(unauth_condition) {
       JSONObject unauth = new JSONObject();
 

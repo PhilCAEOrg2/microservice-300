@@ -147,8 +147,7 @@ public class Res extends RESTService {
   @Consumes(MediaType.TEXT_PLAIN)
   @RolesAllowed("authenticated")
   @ApiResponses(value = {
-       @ApiResponse(code = HttpURLConnection.HTTP_UNAUTHORIZED, message = "unauth"),
-       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "res")
+       @ApiResponse(code = HttpURLConnection.HTTP_UNAUTHORIZED, message = "unauth")
   })
   @ApiOperation(value = "gettest", notes = " ")
   public Response gettest() {
@@ -172,15 +171,6 @@ public class Res extends RESTService {
       
 
       return Response.status(HttpURLConnection.HTTP_UNAUTHORIZED).entity(unauth.toJSONString()).build();
-    }
-    // res
-    boolean res_condition = true;
-    if(res_condition) {
-      JSONObject res = new JSONObject();
-
-      
-
-      return Response.status(HttpURLConnection.HTTP_OK).entity(res.toJSONString()).build();
     }
     return null;
   }
